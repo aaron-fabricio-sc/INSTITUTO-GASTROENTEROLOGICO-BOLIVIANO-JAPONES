@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>INSTITUTO GASTROENTEROLOGICO BOLIVIANO JAPONES</title>
+  </head>
+  <body>
+    <button class="boton-menu hamburger hamburger--3dxy" type="button">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <header>
+      <figure>
+        <a href="#"> <img src="img/descarga.jpg" alt="Logo" /></a>
+      </figure>
+      <h2>INSTITUTO GASTROENTEROLOGICO BOLIVIANO JAPONES</h2>
+    </header>
+    <aside class="contenedor_menu" id="menu">
+      <nav>
+        <ul class="menu">
+          <li>
+            <a href="#"> Inicio</a>
+          </li>
+          <li><a href="#">Institución</a></li>
+          <li>
+            <a href="#"
+              >Departamento Investigación
+              <i class="icono derecha fa fa-chevron-down"></i
+            ></a>
+            <ul class="sub-menu">
+              <li><a href="#">Función</a></li>
+              <li><a href="#">Mienbros</a></li>
+              <li><a href="#">Misión / Visión</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"
+              >Científico <i class="icono derecha fa fa-chevron-down"></i
+            ></a>
+            <ul class="sub-menu">
+              <li><a href="#">Bolentín Semanal</a></li>
+              <li><a href="#">Actualización</a></li>
+              <li><a href="#">Publicaciones</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Editorial</a></li>
+          <li>
+            <a href="#"
+              >Cargo <i class="icono derecha fa fa-chevron-down"></i
+            ></a>
+            <ul class="sub-menu">
+              <li><a href="#">Capacitación</a></li>
+              <li><a href="#">Plan de Contingencia</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".menu li:has(ul)").click(function (e) {
+          e.preventDefault();
+
+          if ($(this).hasClass("activado")) {
+            $(this).removeClass("activado");
+            $(this).children("ul").slideUp();
+          } else {
+            $(".menu li ul").slideUp();
+            $(".menu li").removeClass("activado");
+            $(this).addClass("activado");
+            $(this).children("ul").slideDown();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
